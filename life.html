@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Life — The Anthology</title>
+  <link rel="stylesheet" href="src/css/life.css">
+</head>
+<body>
+  
+  <!-- Step 1: Advertorial Screen -->
+  <main id="advertorial" class="container advertorial">
+    <div class="article-meta">Lifestyle Report &mdash; 2024</div>
+    <h1 class="headline">Restoring Rhythm to the Modern Life.</h1>
+    <img src="https://images.unsplash.com/photo-1545208393-596371BA93a0?q=80&w=1974&auto=format&fit=crop" alt="Calm environment" class="featured-image" referrerPolicy="no-referrer">
+    
+    <div class="article-content">
+      <p class="intro-text">"The shortest way to do many things is to only do one thing at a time." &mdash; This philosophy is the foundation of our life optimization framework.</p>
+      <p>We live in an age of hyper-connectivity, yet we've never been more disconnected from our own equilibrium. The digital sprawl has not only claimed our attention but also our agency over how we live our daily lives.</p>
+      <p>Modern Life is a curated program designed to strip away the non-essential. We focus on three core pillars: Environmental Clarity, Biological Rhythm, and Cognitive Focus. By aligning these elements, we create space for what truly matters.</p>
+      <p>This demo illustrates how we bridge the gap between initial inspiration and personalized action. See the journey from reading our manifesto to starting your own optimization protocol.</p>
+    </div>
+
+    <div class="cta-container">
+      <h2 style="font-family: serif; font-weight: 400; margin-bottom: 1.5rem;">Begin your transition?</h2>
+      <p style="margin-bottom: 2.5rem; opacity: 0.6; font-size: 0.95rem;">Join a select group focused on returning to a state of flow and intention.</p>
+      <button id="start-btn" class="btn">Start Your Protocol</button>
+    </div>
+  </main>
+
+  <!-- Step 2: Multi-step Form -->
+  <section id="form-view" class="form-view">
+    <div class="step-indicator">
+      <div class="step active"></div>
+      <div class="step"></div>
+      <div class="step"></div>
+    </div>
+
+    <form id="life-form">
+      <!-- Form Step 1: Personal -->
+      <div class="form-step active">
+        <h2>Your Identity</h2>
+        <div class="input-group">
+          <label for="name">Preferred Name</label>
+          <input type="text" id="name" placeholder="E.g. Julian" required>
+        </div>
+        <div class="input-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" required>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn next-btn" style="margin-left: auto;">Continue</button>
+        </div>
+      </div>
+
+      <!-- Form Step 2: Lifestyle -->
+      <div class="form-step">
+        <h2>Your Rhythm</h2>
+        <div class="input-group">
+          <label for="activity">Daily Activity Level</label>
+          <select id="activity">
+            <option value="Sedentary">Sedentary (Digital-heavy)</option>
+            <option value="Moderate">Moderate Movement</option>
+            <option value="Active">High Physical Output</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="goal">Primary Focus</label>
+          <select id="goal">
+            <option value="Focus">Deep Cognitive Work</option>
+            <option value="Rest">Biological Restoration</option>
+            <option value="Balance">General Equilibrium</option>
+          </select>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary prev-btn">Back</button>
+          <button type="button" class="btn next-btn">Continue</button>
+        </div>
+      </div>
+
+      <!-- Form Step 3: Confirmation -->
+      <div class="form-step">
+        <h2>Final Invitation</h2>
+        <p style="margin-bottom: 2.5rem; color: #718096;">By submitting, you agree to enter our private orientation sequence. We value your privacy as much as your attention.</p>
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary prev-btn">Back</button>
+          <button id="submit-btn" type="submit" class="btn">Initiate Protocol</button>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <!-- Step 3: Thank You & Delivery Demo -->
+  <section id="thank-you-view" class="container thank-you-view">
+    <div class="success-icon">I</div>
+    <h1 class="headline">Orientation Initialized.</h1>
+    <p style="max-width: 600px; margin: 0 auto; opacity: 0.7;">You have taken the first step toward a more intentional life. We will reach out shortly to begin your transition.</p>
+
+    <!-- Lead Delivery Demo -->
+    <div class="delivery-demo">
+      <h3 style="font-family: serif; font-size: 1.4rem; margin-bottom: 1.5rem; font-weight: 400;">B2B Lead Delivery Flow</h3>
+      <p style="font-size: 0.85rem; opacity: 0.6; margin-bottom: 2.5rem;">This visualization shows how the data you provided is routed to our life-planning partners.</p>
+      
+      <div class="demo-flow">
+        <div class="flow-node">Lead Captured</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">Validation Layer</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">Partner Dispatch</div>
+      </div>
+
+      <div style="margin-top: 2rem;">
+        <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.8rem; color: #a0aec0;">Encrypted Payload Log</div>
+        <pre id="lead-log" class="delivery-details">
+[SYSTEM] Awaiting input event...
+        </pre>
+      </div>
+
+      <div style="margin-top: 2.5rem; padding: 1.5rem; background: #fff; border: 1px dashed #cbd5e0; font-size: 0.75rem; color: #4a5568; line-height: 1.6;">
+        <strong>Integration Protocol:</strong> Leads are delivered via high-availability brokers (Kafka/RabbitMQ) for enterprise-grade reliability. Each payload is schema-validated and enriched with source attribution for perfect buyer visibility.
+      </div>
+    </div>
+
+    <div style="margin-top: 4rem; display: flex; gap: 1rem; justify-content: center;">
+      <a href="life.html" class="btn btn-secondary">Restart Protocol</a>
+      <a href="index.html" class="btn">Back to Curator</a>
+    </div>
+  </section>
+
+  <script src="src/js/life.js"></script>
+</body>
+</html>

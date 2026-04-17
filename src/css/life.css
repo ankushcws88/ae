@@ -1,0 +1,260 @@
+/* life.css - Standalone CSS for the Life Anthology Journey */
+
+:root {
+  --brand-ink: #1a1a1a;
+  --brand-paper: #f0f4f8; /* Slightly cooler, lifestyle-focused paper */
+  --brand-accent: #4a5568;
+  --text-muted: #4a5568;
+  --border-light: rgba(0,0,0,0.08);
+  --success-blue: #2b6cb0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--brand-paper);
+  color: var(--brand-ink);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Advertorial Styles */
+.advertorial {
+  display: block;
+}
+
+.article-meta {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #718096;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.headline {
+  font-family: "Iowan Old Style", "Palatino", serif;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.featured-image {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 2px;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.intro-text {
+  font-size: 1.25rem;
+  color: #2d3748;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  font-style: italic;
+  border-left: 3px solid var(--brand-accent);
+  padding-left: 1.5rem;
+}
+
+.article-content p {
+  margin-bottom: 1.5rem;
+  color: #4a5568;
+  font-size: 1.05rem;
+}
+
+.cta-container {
+  text-align: center;
+  margin: 4rem 0;
+  padding: 4rem;
+  background: white;
+  border-radius: 0;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+}
+
+.btn {
+  display: inline-block;
+  background: var(--brand-ink);
+  color: white;
+  padding: 1.2rem 2.5rem;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #333;
+  transform: scale(1.02);
+  letter-spacing: 0.15em;
+}
+
+/* Multi-step Form Styles */
+.form-view {
+  display: none;
+  max-width: 550px;
+  margin: 5rem auto;
+  background: white;
+  padding: 3.5rem;
+  border-radius: 0;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+}
+
+.step-indicator {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.step {
+  width: 32%;
+  height: 2px;
+  background: #edf2f7;
+}
+
+.step.active {
+  background: var(--brand-ink);
+  height: 3px;
+}
+
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+}
+
+.form-step h2 {
+  font-family: serif;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  font-weight: 400;
+}
+
+.input-group {
+  margin-bottom: 2rem;
+}
+
+label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  color: #718096;
+}
+
+input, select {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  background: #f7fafc;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--brand-ink);
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.btn-secondary {
+  background: #f7fafc;
+  color: #4a5568;
+  border: 1px solid #e2e8f0;
+}
+
+/* Thank You & Delivery Demo Styles */
+.thank-you-view {
+  display: none;
+  text-align: center;
+  padding: 6rem 1rem;
+}
+
+.success-icon {
+  width: 100px;
+  height: 100px;
+  border: 1px solid var(--brand-ink);
+  color: var(--brand-ink);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 3rem;
+  font-size: 2.5rem;
+}
+
+.delivery-demo {
+  margin-top: 5rem;
+  padding: 3rem;
+  background: white;
+  border: 1px solid var(--border-light);
+  text-align: left;
+}
+
+.demo-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3rem 0;
+}
+
+.flow-node {
+  flex: 1;
+  text-align: center;
+  padding: 1.5rem;
+  background: #f7fafc;
+  border-radius: 2px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.flow-arrow {
+  flex: 0.3;
+  text-align: center;
+  color: #cbd5e0;
+}
+
+.delivery-details {
+  background: #1a202c;
+  color: #63b3ed;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  padding: 1.5rem;
+  border-radius: 2px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+
+@media (max-width: 600px) {
+  .headline { font-size: 2.2rem; }
+  .demo-flow { flex-direction: column; gap: 1.5rem; }
+  .flow-arrow { transform: rotate(90deg); }
+}
