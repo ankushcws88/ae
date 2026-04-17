@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Journey Demo — The Curator</title>
+  <link rel="stylesheet" href="src/css/form.css">
+</head>
+<body>
+  
+  <!-- Step 1: Advertorial Screen -->
+  <main id="advertorial" class="container advertorial">
+    <div class="article-meta">Industry Insight — April 2024</div>
+    <h1 class="headline">Why Minimalist Design is the Secret Weapon for Modern Conversion</h1>
+    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" alt="Office space" class="featured-image" referrerPolicy="no-referrer">
+    
+    <div class="article-content">
+      <p class="intro-text">In an era of digital noise, the most successful brands aren't the loudest—they're the clearest. Minimalist design is no longer just a trend; it's a structural necessity for high-performing sales funnels.</p>
+      <p>Recent data suggests that users make a judgment on brand credibility in less than 50 milliseconds. When your interface is cluttered, you lose trust. When it's curated, you command authority.</p>
+      <p>This showcase demonstrates the seamless transition from high-intent editorial consumption to lead capture. By keeping the barrier to entry low and the aesthetic value high, we see significant increases in lead quality and retention.</p>
+    </div>
+
+    <div class="cta-container">
+      <h3>Ready to transform your digital presence?</h3>
+      <p style="margin-bottom: 2rem; opacity: 0.7;">Start your consultation journey today and see how we deliver high-quality leads.</p>
+      <button id="start-btn" class="btn">Get Started Now</button>
+    </div>
+  </main>
+
+  <!-- Step 2: Multi-step Form -->
+  <section id="form-view" class="form-view">
+    <div class="step-indicator">
+      <div class="step active"></div>
+      <div class="step"></div>
+      <div class="step"></div>
+    </div>
+
+    <form id="journey-form">
+      <!-- Form Step 1 -->
+      <div class="form-step active">
+        <h2>About You</h2>
+        <div class="input-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="E.g. Alexander Volnay" required>
+        </div>
+        <div class="input-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="alex@company.com" required>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn next-btn" style="margin-left: auto;">Next Step</button>
+        </div>
+      </div>
+
+      <!-- Form Step 2 -->
+      <div class="form-step">
+        <h2>Your Requirements</h2>
+        <div class="input-group">
+          <label for="service">Interested Service</label>
+          <select id="service">
+            <option>Minimalist CRM Integration</option>
+            <option>Anthology Design System</option>
+            <option>Lead Generation Strategy</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="budget">Estimated Monthly Budget</label>
+          <select id="budget">
+            <option>$1,000 - $5,000</option>
+            <option>$5,000 - $15,000</option>
+            <option>$15,000+</option>
+          </select>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary prev-btn">Back</button>
+          <button type="button" class="btn next-btn">Next Step</button>
+        </div>
+      </div>
+
+      <!-- Form Step 3 -->
+      <div class="form-step">
+        <h2>Final Confirmation</h2>
+        <p style="margin-bottom: 2rem;">Ready to send your request? Your data will be delivered immediately to our curation team.</p>
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary prev-btn">Back</button>
+          <button id="submit-btn" type="submit" class="btn">Submit Request</button>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <!-- Step 3: Thank You & Delivery Demo -->
+  <section id="thank-you-view" class="container thank-you-view">
+    <div class="success-icon">✓</div>
+    <h1 class="headline">Thank You for Your Interest</h1>
+    <p>Your journey is complete. Below is a demonstration of how this lead is processed for our buyers.</p>
+
+    <!-- Lead Delivery Demo -->
+    <div class="delivery-demo">
+      <h3 style="font-family: serif; font-size: 1.5rem; margin-bottom: 1rem;">Lead Delivery Visualization</h3>
+      <p style="font-size: 0.9rem; opacity: 0.7;">This segment demonstrates the backend logic that connects the user to the buyer in real-time.</p>
+      
+      <div class="demo-flow">
+        <div class="flow-node">
+          <strong>Step 1</strong><br>Lead Form Captured
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">
+          <strong>Step 2</strong><br>Identity Verified
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">
+          <strong>Step 3</strong><br>Delivered to CRM
+        </div>
+      </div>
+
+      <div style="margin-top: 3rem;">
+        <h4 style="font-size: 0.8rem; text-transform: uppercase; margin-bottom: 0.5rem; opacity: 0.5;">Raw Data Transmission (Simulation)</h4>
+        <pre id="lead-log" class="delivery-details">
+[SYSTEM_IDLE] Waiting for event...
+        </pre>
+      </div>
+
+      <div style="margin-top: 2rem; padding: 1rem; background: #f5f2ed; border: 1px solid var(--border-light); font-size: 0.8rem;">
+        <strong>Note for Buyer:</strong> This lead was delivered via a REST API webhook with 99.9% uptime. You can configure custom routing rules based on the 'Service' or 'Budget' parameters captured above.
+      </div>
+    </div>
+
+    <div style="margin-top: 3rem;">
+      <a href="form.html" class="btn btn-secondary">Restart Demo</a>
+    </div>
+  </section>
+
+  <script src="src/js/form.js"></script>
+</body>
+</html>
