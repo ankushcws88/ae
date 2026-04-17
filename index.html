@@ -3,11 +3,191 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
+    <title>The Curator — Minimalist Anthology</title>
+    <link rel="stylesheet" href="/src/index.css">
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <body class="min-h-screen bg-brand-paper">
+    <div id="root">
+      <!-- Navigation Rail - Vertical Left (Desktop) -->
+      <div class="fixed left-0 top-0 bottom-0 w-16 border-r border-brand-ink/10 hidden lg:flex flex-col items-center py-8 z-50">
+        <div class="vertical-text whitespace-nowrap">
+          EST. MMXXIV &mdash; LONDON
+        </div>
+        <div class="mt-auto space-y-8">
+          <button class="p-2 hover:bg-brand-ink/5 rounded-full transition-colors cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </button>
+          <button id="desktop-menu-btn" class="p-2 bg-brand-ink text-brand-paper hover:bg-brand-ink/90 transition-colors cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Nav Header -->
+      <header class="fixed top-0 left-0 right-0 h-16 border-b border-brand-ink/10 flex lg:hidden items-center justify-between px-6 bg-brand-paper/80 backdrop-blur-md z-50">
+        <div class="font-serif italic text-xl tracking-tight">The Curator</div>
+        <button id="menu-btn" class="cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </header>
+
+      <!-- Fullscreen Menu Overlay -->
+      <div id="menu-overlay" class="fixed inset-0 bg-brand-paper z-40 hidden flex-col justify-center items-center opacity-0 translate-y-[-20px] transition-all duration-500 ease-out">
+        <button id="close-menu-btn" class="absolute top-8 right-8 cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+        <nav class="space-y-6 text-center">
+          <a href="#" class="menu-link block text-4xl md:text-6xl font-serif hover:italic transition-all">Collections</a>
+          <a href="#" class="menu-link block text-4xl md:text-6xl font-serif hover:italic transition-all">Archives</a>
+          <a href="#" class="menu-link block text-4xl md:text-6xl font-serif hover:italic transition-all">Philosophy</a>
+          <a href="#" class="menu-link block text-4xl md:text-6xl font-serif hover:italic transition-all">About</a>
+        </nav>
+      </div>
+
+      <main class="lg:pl-16 pt-16 lg:pt-0">
+        <!-- Hero Section -->
+        <section class="relative min-h-[90vh] flex flex-col justify-center px-6 lg:px-24 border-b border-brand-ink/10">
+          <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-8">
+              <div>
+                <div class="text-[11px] uppercase tracking-[0.3em] font-medium opacity-60 mb-8 animate-fade-in">
+                  Presenting the Anthology
+                </div>
+                <h1 class="font-serif text-6xl md:text-8xl lg:text-[10vw] leading-[0.9] tracking-tighter animate-slide-up">
+                  Silence is <br />
+                  <span class="italic font-light text-brand-accent">the Ultimate</span> <br />
+                  Sophistication.
+                </h1>
+              </div>
+
+              <p class="max-w-md text-sm leading-relaxed opacity-70 animate-fade-in-delayed">
+                A curated exploration of form, light, and the quiet spaces in between. 
+                Dedicated to the pursuit of timeless aesthetic and functional purity.
+              </p>
+              
+              <button class="flex items-center gap-4 text-sm font-medium tracking-widest uppercase border-b border-brand-ink/20 pb-2 group cursor-pointer transition-all hover:gap-6">
+                Enter the Gallery 
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+            </div>
+
+            <div class="lg:col-span-5 relative">
+              <div class="oval-mask overflow-hidden animate-zoom-in">
+                <img 
+                  src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?q=80&w=2067&auto=format&fit=crop" 
+                  alt="Minimalist Interior" 
+                  class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div class="absolute -bottom-8 -left-8 bg-brand-paper p-6 border border-brand-ink/10 hidden md:block">
+                <div class="font-serif italic text-2xl">Mme. Volnay, 1928</div>
+                <div class="text-[10px] uppercase tracking-widest opacity-40 mt-1">Archival Print No. 42</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Featured Grid -->
+        <section class="py-24 px-6 lg:px-24">
+          <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-end mb-16 border-b border-brand-ink/10 pb-8">
+              <div>
+                <h2 class="font-serif text-4xl lg:text-5xl">Curated works</h2>
+                <div class="text-[10px] uppercase tracking-[0.2em] font-medium opacity-50 mt-2">Selection I &mdash; IV</div>
+              </div>
+              <a href="#" class="text-xs uppercase tracking-widest hover:text-brand-accent transition-colors">View All</a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-l border-t border-brand-ink/10">
+              <!-- Item 1 -->
+              <div class="group relative p-8 border-r border-b border-brand-ink/10 cursor-pointer overflow-hidden h-[500px] flex flex-col hover:bg-brand-ink/[0.03] transition-colors">
+                <div class="relative z-10 flex justify-between items-start">
+                  <div>
+                    <span class="text-[10px] font-mono opacity-40 uppercase tracking-tighter">/01</span>
+                    <h3 class="font-serif text-3xl mt-2 group-hover:italic transition-all">Object of Desire</h3>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-hover:opacity-100 transition-opacity"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                </div>
+                <div class="mt-auto relative z-10">
+                  <div class="text-[10px] uppercase tracking-widest font-medium opacity-60">Form</div>
+                  <div class="text-xs font-light italic mt-1">2023</div>
+                </div>
+                <div class="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none">
+                  <img src="https://images.unsplash.com/photo-1544457070-4cd773b4d71e?q=80&w=1854&auto=format&fit=crop" class="w-full h-full object-cover grayscale" referrerPolicy="no-referrer" />
+                </div>
+              </div>
+              <!-- Item 2 -->
+              <div class="group relative p-8 border-r border-b border-brand-ink/10 cursor-pointer overflow-hidden h-[500px] flex flex-col hover:bg-brand-ink/[0.03] transition-colors">
+                <div class="relative z-10 flex justify-between items-start">
+                  <div>
+                    <span class="text-[10px] font-mono opacity-40 uppercase tracking-tighter">/02</span>
+                    <h3 class="font-serif text-3xl mt-2 group-hover:italic transition-all">Shadow play</h3>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-hover:opacity-100 transition-opacity"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                </div>
+                <div class="mt-auto relative z-10">
+                  <div class="text-[10px] uppercase tracking-widest font-medium opacity-60">Light</div>
+                  <div class="text-xs font-light italic mt-1">2024</div>
+                </div>
+                <div class="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none">
+                  <img src="https://images.unsplash.com/photo-1510520434124-5bc7e6438dc1?q=80&w=1887&auto=format&fit=crop" class="w-full h-full object-cover grayscale" referrerPolicy="no-referrer" />
+                </div>
+              </div>
+              <!-- Item 3 -->
+              <div class="group relative p-8 border-r border-b border-brand-ink/10 cursor-pointer overflow-hidden h-[500px] flex flex-col hover:bg-brand-ink/[0.03] transition-colors">
+                <div class="relative z-10 flex justify-between items-start">
+                  <div>
+                    <span class="text-[10px] font-mono opacity-40 uppercase tracking-tighter">/03</span>
+                    <h3 class="font-serif text-3xl mt-2 group-hover:italic transition-all">The Void</h3>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-hover:opacity-100 transition-opacity"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                </div>
+                <div class="mt-auto relative z-10">
+                  <div class="text-[10px] uppercase tracking-widest font-medium opacity-60">Space</div>
+                  <div class="text-xs font-light italic mt-1">2022</div>
+                </div>
+                <div class="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none">
+                  <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover grayscale" referrerPolicy="no-referrer" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Philosophy Footer Segment -->
+        <section class="py-32 bg-brand-ink text-brand-paper px-6 lg:px-24 text-center">
+          <div class="max-w-3xl mx-auto space-y-12">
+            <div class="animate-on-scroll opacity-0 transition-opacity duration-1000 text-[11px] uppercase tracking-[0.5em] font-light opacity-50">
+              The Manifesto
+            </div>
+            <h2 class="animate-on-scroll opacity-0 transition-opacity duration-1000 delay-300 font-serif text-3xl md:text-5xl lg:text-6xl font-light leading-tight italic">
+              "We believe in the power of less. In the dignity of a single line. 
+              In the narrative weight of what remains unsaid."
+            </h2>
+            <div class="pt-12">
+              <div class="h-24 w-px bg-brand-paper/20 mx-auto"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Main Footer -->
+        <footer class="py-12 border-t border-brand-ink/10 px-6 lg:px-24">
+          <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="font-serif text-2xl italic tracking-tight">The Curator</div>
+            <div class="flex gap-12 text-[10px] uppercase tracking-[0.2em] font-medium opacity-60">
+              <a href="#" class="hover:text-brand-accent transition-colors">Instagram</a>
+              <a href="#" class="hover:text-brand-accent transition-colors">Inquiries</a>
+              <a href="#" class="hover:text-brand-accent transition-colors">Archives</a>
+            </div>
+            <div class="text-[9px] uppercase tracking-widest opacity-30">
+              &copy; 2024 Design by The Curator Group. ALL RIGHTS RESERVED.
+            </div>
+          </div>
+        </footer>
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
 
